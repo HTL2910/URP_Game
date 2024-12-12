@@ -74,7 +74,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1940562544377050214}
   - component: {fileID: 5480440455579069980}
-  - component: {fileID: 4279019630184498123}
   m_Layer: 0
   m_Name: Customer_1_1
   m_TagString: Untagged
@@ -101,7 +100,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5480440455579069980
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,20 +117,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4279019630184498123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271585158209072860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33d9bd200c53dff4398a77701cd94af2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1451665636605684455
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +862,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4685316883534936980}
-  - component: {fileID: 4685316883534936987}
   - component: {fileID: 4685316883534936986}
   - component: {fileID: 1091790084116522055}
   m_Layer: 0
@@ -902,20 +887,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4685316883534936987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4685316883534936984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a809275e2be7bb84d91cae2d819ca10e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visitorAnimator: {fileID: 5480440455579069980}
-  carryingContainer: {fileID: 4685316883591396862}
 --- !u!195 &4685316883534936986
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -629,7 +629,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5098629692967526117}
-  - component: {fileID: 7447705486428478489}
   - component: {fileID: 3461314269849777613}
   m_Layer: 0
   m_Name: Money Stack
@@ -678,45 +677,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7447705486428478489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8262332480687551898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 246d021b1bf880e49aba623dc0b55d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyPrefab: {fileID: 8472051114345408748, guid: 93f0a6a3262bd3042b3bf1d7e6a3d511,
-    type: 3}
-  stackElementsHolders:
-  - {fileID: 4108072114700326154}
-  - {fileID: 7784257563776839650}
-  - {fileID: 7040940585245900315}
-  - {fileID: 9188690806085946654}
-  - {fileID: 6735826187980833734}
-  - {fileID: 2246004734145250991}
-  - {fileID: 7455089628142359883}
-  - {fileID: 5982193172937272500}
-  - {fileID: 6870963239640570879}
-  - {fileID: 3175913837255839527}
-  - {fileID: 4707232200586568966}
-  - {fileID: 9127765623113076935}
-  - {fileID: 7709782257287472831}
-  - {fileID: 6740676131983779786}
-  - {fileID: 4974032067951390365}
-  - {fileID: 7489648727292440085}
-  - {fileID: 8490383997455008437}
-  - {fileID: 3612721188225536033}
-  - {fileID: 6475964217098498670}
-  - {fileID: 8940582631090010397}
-  - {fileID: 2939292430258350079}
-  - {fileID: 2428402635941137856}
-  - {fileID: 1624422912528116503}
-  - {fileID: 6594574327622590714}
 --- !u!65 &3461314269849777613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -861,68 +821,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5098629692967526117}
     m_Modifications:
-    - target: {fileID: 2136922679551784161, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 2136922679551784161, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_Name
       value: Money Pick Up Area
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8904141176541933746, guid: c398af71a9641c14ab4082c1d88eaa88,
-        type: 3}
+    - target: {fileID: 8904141176541933746, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
@@ -930,7 +877,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
 --- !u!4 &8140080038519343350 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 3340908967344059874, guid: c398af71a9641c14ab4082c1d88eaa88, type: 3}
   m_PrefabInstance: {fileID: 6821287312463510804}
   m_PrefabAsset: {fileID: 0}

@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7256483893336762450}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIRateUs, Assembly-CSharp
         m_MethodName: CloseButton
         m_Mode: 1
@@ -836,7 +836,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7256483893336762450}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIRateUs, Assembly-CSharp
         m_MethodName: RateButton
         m_Mode: 1
@@ -859,7 +859,6 @@ GameObject:
   - component: {fileID: 7256483893336762474}
   - component: {fileID: 7256483893336762475}
   - component: {fileID: 7256483893336762452}
-  - component: {fileID: 7256483893336762450}
   m_Layer: 5
   m_Name: RateUsPanel
   m_TagString: Untagged
@@ -929,26 +928,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7256483893336762450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7256483893336762449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eafba2f678f8a154ab832fea90b856ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeImage: {fileID: 465218258228233427}
-  panel: {fileID: 7256483895120253305}
-  starTransforms:
-  - {fileID: 7256483894436358508}
-  - {fileID: 7256483894878480505}
-  - {fileID: 7256483894631212266}
-  - {fileID: 7256483893526841586}
-  hand: {fileID: 1966922389258203935}
 --- !u!1 &7256483893526841597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,7 +1201,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7256483893336762450}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIRateUs, Assembly-CSharp
         m_MethodName: CloseButton
         m_Mode: 1

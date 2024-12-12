@@ -236,7 +236,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2028137394414878633}
-  - component: {fileID: 2028137394414878630}
   - component: {fileID: 2028137394414878631}
   - component: {fileID: 5910450710804865146}
   m_Layer: 0
@@ -262,20 +261,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2028137394414878630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028137394414878629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a809275e2be7bb84d91cae2d819ca10e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visitorAnimator: {fileID: 79752862342412687}
-  carryingContainer: {fileID: 2028137394459343299}
 --- !u!195 &2028137394414878631
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1247,7 +1232,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6339795155775693813}
   - component: {fileID: 79752862342412687}
-  - component: {fileID: 2140590785316471705}
   m_Layer: 0
   m_Name: Customer_1_1
   m_TagString: Untagged
@@ -1274,7 +1258,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &79752862342412687
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1291,20 +1275,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2140590785316471705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679025947568568655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33d9bd200c53dff4398a77701cd94af2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7819199781701106211
 GameObject:
   m_ObjectHideFlags: 0

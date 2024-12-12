@@ -31,6 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1342752242664368038}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -67,9 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: MAX
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c2ee9bf6e65695d48ba9d4b5a346538f, type: 2}
-  m_sharedMaterial: {fileID: -3707072339102680950, guid: c2ee9bf6e65695d48ba9d4b5a346538f,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -145,7 +145,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1342752242664368038}
   - component: {fileID: 1342752242664368039}
-  - component: {fileID: 323295919281026068}
   m_Layer: 5
   m_Name: Max Floating Text Canvas
   m_TagString: Untagged
@@ -167,6 +166,7 @@ RectTransform:
   m_Children:
   - {fileID: 1342752240961778365}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -190,77 +190,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1362561977
   m_SortingOrder: 100
   m_TargetDisplay: 0
---- !u!114 &323295919281026068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342752242664368034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 571af70200639d549ad89aa56f7145ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatingText: {fileID: 8416023773868518092}
-  offset: {x: 0, y: 5, z: 0}
-  time: 1.5
-  easing: 16
-  scaleTime: 1.5
-  scaleAnimationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.0003804993
-      value: 0.001477398
-      inSlope: 4.589995
-      outSlope: 4.589995
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.21276523
-      value: 0.9763223
-      inSlope: 0.084381424
-      outSlope: 0.084381424
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.08393501
-    - serializedVersion: 3
-      time: 0.8196475
-      value: 0.97872347
-      inSlope: -0.2219849
-      outSlope: -0.2219849
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.39576387
-    - serializedVersion: 3
-      time: 0.9186087
-      value: 0.54434335
-      inSlope: -7.123674
-      outSlope: -7.123674
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.093415245
-    - serializedVersion: 3
-      time: 1
-      value: -0.000076293945
-      inSlope: -6.688919
-      outSlope: -6.688919
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
