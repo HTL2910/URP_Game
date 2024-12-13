@@ -123,6 +123,64 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &590721503
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232332422037683305, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329176190649520718, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+      propertyPath: m_Name
+      value: Animal Cat 04
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4462886648396140638, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 2499abf9b50c954419c4c124aa72a495, type: 3}
 --- !u!1001 &704311030
 PrefabInstance:
   m_ObjectHideFlags: 0
