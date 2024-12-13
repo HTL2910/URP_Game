@@ -29,8 +29,7 @@ public class UIManager : Singleton<UIManager>
 
     [Header("GameObject")]
     public GameObject settingPanel;
-    [Header("Bool")]
-    public bool isSetting=false;
+    
 
 
 
@@ -46,4 +45,13 @@ public class UIManager : Singleton<UIManager>
     {
         
     }
+    public void Setting()
+    {
+        settingPanel.SetActive(true);
+    }
+    public void CloseSetting()
+    {
+        settingPanel.SetActive(false);
+    }
+    
 }
