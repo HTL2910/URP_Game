@@ -28,8 +28,15 @@ public class PlayerMovementWithTap : MonoBehaviour
 
         RecoverStamina();
         MovePlayer();
+        CheckPosition();
     }
-
+    private void CheckPosition()
+    {
+        if (gameObject.transform.position.z > 200f)
+        {
+            gameObject.transform.position = Vector3.zero;
+        }
+    }
     void HandleTouchInput()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && 
@@ -90,15 +97,15 @@ public class PlayerMovementWithTap : MonoBehaviour
         if (ui.currentSpeed > 0.1f)
         {
             animator.SetBool("Run", true);
-            int tmpSpeed = Mathf.CeilToInt(Mathf.Min(ui.currentSpeed, 3f));
-            animator.SetInteger("Movement Multiplier", tmpSpeed);
+            float tmpSpeed = Mathf.Ceil(Mathf.Min(ui.currentSpeed, 3f));
+            animator.SetFloat("Movement Multiplier", tmpSpeed);
           
           
         }
         else
         {
             animator.SetBool("Run", false);
-            animator.SetInteger("Movement Multiplier", 1);
+            animator.SetFloat("Movement Multiplier", 1f);
 
 
         }
