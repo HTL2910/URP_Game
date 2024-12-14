@@ -73,7 +73,7 @@ public class UIManager : Singleton<UIManager>
     }
     private void View()
     {
-        moneyText.text = Mathf.Max(0,amount).ToString();
+        moneyText.text = Mathf.Max(0,amount).ToString()+ "$";
         staminalText.text = currentStaminalCount.ToString() + "/" + maxStaminalCount.ToString();
         minSpeedText.text = minspeed.ToString("F1");
         maxSpeedText.text = (maxSpeed * 10).ToString("F1");
@@ -105,13 +105,15 @@ public class UIManager : Singleton<UIManager>
     {
         float targetValue = (float)SliderValue(soundSlider);
         StartCoroutine(SmoothSliderChange(soundSlider, targetValue, speedSlider));
-
+        AudioManager.Instance.soundSource.volume = targetValue;
     }
 
     public void Audio()
     {
         float targetValue = (float)SliderValue(audioSlider);
         StartCoroutine(SmoothSliderChange(audioSlider, targetValue, speedSlider));
+        AudioManager.Instance.audioSource.volume = targetValue;
+
     }
     public void Vibration()
     {
@@ -125,6 +127,7 @@ public class UIManager : Singleton<UIManager>
             slider.value = Mathf.MoveTowards(slider.value, targetValue, speed * Time.deltaTime);
             yield return null;
         }
+
     }
     /// </Slider>
 

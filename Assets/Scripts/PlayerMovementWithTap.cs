@@ -41,6 +41,7 @@ public class PlayerMovementWithTap : MonoBehaviour
             ui.amount += ui.maxIncome;
             stepParticleSystem.Play();
             addMoneyParticleSystem.Play();
+            AudioManager.Instance.audioSource.PlayOneShot(AudioManager.Instance.moneyPickClip);
             ui.CheckBuyPanel();
             if (ui.currentStaminalCount == 0)
             {
