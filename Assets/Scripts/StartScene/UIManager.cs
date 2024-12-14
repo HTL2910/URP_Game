@@ -39,6 +39,9 @@ public class UIManager : Singleton<UIManager>
 
     [Header("GameObject")]
     public GameObject settingPanel;
+    public Transform radiusSpeed;
+    private float maxAngle=80f;
+    private float minAngle = -80f;
     [Header("Slider")]
     public Slider staminaSlider;
     public Slider soundSlider;
@@ -47,15 +50,25 @@ public class UIManager : Singleton<UIManager>
     void Start()
     {
         CheckSetting();
-        View();
+        
     }
-
+    private void Update()
+    {
+        View();
+        ViewSlider();
+        RotateWithSpeed();
+    }
+    private void RotateWithSpeed()
+    {
+        float currentAngle = Mathf.Lerp(-80f, 80f, currentSpeed / maxSpeed );
+        radiusSpeed.rotation = Quaternion.Euler(0f, 0f, currentAngle);
+    }
     private void View()
     {
-        moneyText.text = amount.ToString();
+        moneyText.text = Mathf.Max(0,amount).ToString();
         staminalText.text = currentStaminalCount.ToString() + "/" + maxStaminalCount.ToString();
-        minSpeedText.text = minspeed.ToString();
-        maxSpeedText.text = (maxSpeed * 10).ToString();
+        minSpeedText.text = minspeed.ToString("F1");
+        maxSpeedText.text = (maxSpeed * 10).ToString("F1");
         countStaminalText.text = maxStaminalCount.ToString();
         priceStaminalText.text = priceStamina.ToString();
         countSpeedText.text = maxSpeed.ToString();
@@ -66,10 +79,13 @@ public class UIManager : Singleton<UIManager>
     }
     private void ViewSlider()
     {
-        staminaSlider.value = currentStaminalCount / maxStaminalCount;
+        staminaSlider.value = (float)currentStaminalCount / maxStaminalCount;
 
     }
-
+    public bool IsFullStamina()
+    {
+        return currentStaminalCount == maxStaminalCount;
+    }
     /// <summary>
     /// update after
     private int SliderValue(Slider slider)
@@ -113,7 +129,7 @@ public class UIManager : Singleton<UIManager>
 
     public void BuyStamina()
     {
-        if (priceStamina < amount)
+        if (priceStamina <= amount)
         {
             amount-=priceStamina;
             priceStamina += staminaIncreasePrice;
@@ -124,7 +140,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void BuySpeed()
     {
-        if (priceSpeed < amount)
+        if (priceSpeed <= amount)
         {
             amount -= priceSpeed;
             priceSpeed += speedIncreasePrice;
@@ -135,7 +151,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void BuyIncome()
     {
-        if (priceSpeed < amount)
+        if (priceSpeed <= amount)
         {
             amount -= priceIncome;
             priceIncome += incomeIncreasePrice;
