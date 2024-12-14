@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class UIManager : Singleton<UIManager>
 {
     [Header("Count")]
@@ -204,4 +205,8 @@ public class UIManager : Singleton<UIManager>
         settingPanel.SetActive(false);
     }
     /// </Setting>
+    public void Race()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
 }
