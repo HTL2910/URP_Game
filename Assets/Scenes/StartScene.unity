@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.40143287, g: 0.43528062, b: 0.9150943, a: 1}
+  m_Color: {r: 0.32941177, g: 0.36078432, b: 0.76470596, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6016,6 +6016,9 @@ MonoBehaviour:
   soundSlider: {fileID: 1131718722}
   audioSlider: {fileID: 1699913553}
   vibrationSlider: {fileID: 180826115}
+  staminaPanel: {fileID: 72166128}
+  speedPanel: {fileID: 638534774}
+  incomePanel: {fileID: 1440122295}
 --- !u!1 &1383612451
 GameObject:
   m_ObjectHideFlags: 0

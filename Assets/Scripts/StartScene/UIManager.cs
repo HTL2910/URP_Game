@@ -37,16 +37,24 @@ public class UIManager : Singleton<UIManager>
     public TextMeshProUGUI countIncomeText;
     public TextMeshProUGUI priceIncomeText;
 
-    [Header("GameObject")]
+    [Header("Feature")]
+    
     public GameObject settingPanel;
     public Transform radiusSpeed;
     private float maxAngle=80f;
     private float minAngle = -80f;
     [Header("Slider")]
-    public Slider staminaSlider;
-    public Slider soundSlider;
-    public Slider audioSlider;
-    public Slider vibrationSlider;
+    [SerializeField] Slider staminaSlider;
+    [SerializeField] Slider soundSlider;
+    [SerializeField] Slider audioSlider;
+    [SerializeField] Slider vibrationSlider;
+
+    [Header("CheckCount")]
+    [SerializeField] Image staminaPanel;
+    [SerializeField] Image speedPanel;
+    [SerializeField] Image incomePanel;
+    private Color blueColor= new Color(100f / 255f, 100f / 255f, 250f / 255f, 255f / 255f);//blue
+    private Color orangeColor= new Color(250 / 255f, 100f / 255f, 0f / 255f, 255f / 255f);//orange 
     void Start()
     {
         CheckSetting();
@@ -60,7 +68,7 @@ public class UIManager : Singleton<UIManager>
     }
     private void RotateWithSpeed()
     {
-        float currentAngle = Mathf.Lerp(-80f, 80f, currentSpeed / maxSpeed );
+        float currentAngle = Mathf.Lerp(minAngle, maxAngle, currentSpeed / maxSpeed );
         radiusSpeed.rotation = Quaternion.Euler(0f, 0f, currentAngle);
     }
     private void View()
@@ -77,6 +85,8 @@ public class UIManager : Singleton<UIManager>
         priceIncomeText.text = priceIncome.ToString();
         ViewSlider();
     }
+    /// <Slider>
+    /// update after
     private void ViewSlider()
     {
         staminaSlider.value = (float)currentStaminalCount / maxStaminalCount;
@@ -86,8 +96,7 @@ public class UIManager : Singleton<UIManager>
     {
         return currentStaminalCount == maxStaminalCount;
     }
-    /// <summary>
-    /// update after
+   
     private int SliderValue(Slider slider)
     {
         return slider.value == 0 ? 1 : 0;
@@ -117,26 +126,39 @@ public class UIManager : Singleton<UIManager>
             yield return null;
         }
     }
-    /// </summary>
-    private void CheckSetting()
+    /// </Slider>
+
+
+    /// <Buy>
+    private void CheckBuy(int count, Image panel)
     {
-        if (settingPanel.activeSelf)
+        if (count <= amount)
         {
-            CloseSetting();
+            panel.color = blueColor;//blue
+
+        }
+        else
+        {
+            panel.color = orangeColor;
         }
     }
+    public void CheckBuyPanel()
+    {
+        CheckBuy(priceStamina, staminaPanel);
+        CheckBuy(priceSpeed, speedPanel);
+        CheckBuy(priceIncome, incomePanel);
 
-
+    }
     public void BuyStamina()
     {
         if (priceStamina <= amount)
         {
-            amount-=priceStamina;
+            amount -= priceStamina;
             priceStamina += staminaIncreasePrice;
             maxStaminalCount += staminaIncreaseCount;
         }
-        Debug.Log("Buy Stamina");
-        View();
+
+        CheckBuyPanel();
     }
     public void BuySpeed()
     {
@@ -146,19 +168,29 @@ public class UIManager : Singleton<UIManager>
             priceSpeed += speedIncreasePrice;
             maxSpeed += speedIncreaseCount;
         }
-        Debug.Log("Buy Speed");
-        View();
+        CheckBuyPanel();
     }
+
     public void BuyIncome()
     {
-        if (priceSpeed <= amount)
+        if (priceIncome <= amount)
         {
             amount -= priceIncome;
             priceIncome += incomeIncreasePrice;
             maxIncome += incomeIncreaseCount;
         }
-        Debug.Log("Buy Income");
-        View();
+        CheckBuyPanel();
+    }
+   
+    /// </Buy>
+
+    /// <Setting>
+    private void CheckSetting()
+    {
+        if (settingPanel.activeSelf)
+        {
+            CloseSetting();
+        }
     }
     public void Setting()
     {
@@ -168,5 +200,5 @@ public class UIManager : Singleton<UIManager>
     {
         settingPanel.SetActive(false);
     }
-    
+    /// </Setting>
 }

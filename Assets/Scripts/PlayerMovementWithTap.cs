@@ -15,8 +15,11 @@ public class PlayerMovementWithTap : MonoBehaviour
     public ParticleSystem stepParticleSystem;
     public ParticleSystem addMoneyParticleSystem;
     [SerializeField] Animator animator;
-  
-
+    UIManager ui;
+    private void Start()
+    {
+        ui = UIManager.Instance;
+    }
 
     void Update()
     {
@@ -30,15 +33,16 @@ public class PlayerMovementWithTap : MonoBehaviour
     void HandleTouchInput()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && 
-            UIManager.Instance.currentStaminalCount > 0 && 
+            ui.currentStaminalCount > 0 && 
             !EventSystem.current.IsPointerOverGameObject())
         {
-            UIManager.Instance.currentSpeed = Mathf.Min(UIManager.Instance.currentSpeed + acceleration, UIManager.Instance.maxSpeed);
-            UIManager.Instance.currentStaminalCount = Mathf.Max(UIManager.Instance.currentStaminalCount -(int) UIManager.Instance.maxSpeed, 0);
-            UIManager.Instance.amount += UIManager.Instance.maxIncome;
+            ui.currentSpeed = Mathf.Min(ui.currentSpeed + acceleration, ui.maxSpeed);
+            ui.currentStaminalCount = Mathf.Max(ui.currentStaminalCount -(int) ui.maxSpeed, 0);
+            ui.amount += ui.maxIncome;
             stepParticleSystem.Play();
             addMoneyParticleSystem.Play();
-            if (UIManager.Instance.currentStaminalCount == 0)
+            ui.CheckBuyPanel();
+            if (ui.currentStaminalCount == 0)
             {
                 isOutOfStamina = true;
             }
@@ -50,8 +54,8 @@ public class PlayerMovementWithTap : MonoBehaviour
     {
         if (isOutOfStamina || Input.touchCount <=0) 
         {
-            UIManager.Instance.currentSpeed = Mathf.Max(UIManager.Instance.currentSpeed - deceleration * Time.deltaTime, 0); 
-            if (UIManager.Instance.currentSpeed == 0)
+            ui.currentSpeed = Mathf.Max(ui.currentSpeed - deceleration * Time.deltaTime, 0); 
+            if (ui.currentSpeed == 0)
             {
                 isOutOfStamina = false; 
             }
@@ -61,7 +65,7 @@ public class PlayerMovementWithTap : MonoBehaviour
 
     void RecoverStamina()
     {
-        if (UIManager.Instance.currentSpeed == 0)
+        if (ui.currentSpeed == 0)
         {
             StartCoroutine(SmoothIncrease(0.1f));
         }
@@ -71,9 +75,9 @@ public class PlayerMovementWithTap : MonoBehaviour
     IEnumerator SmoothIncrease(float time )
     {
         yield return new WaitForSeconds(time);
-        if (!UIManager.Instance.IsFullStamina())
+        if (!ui.IsFullStamina())
         {
-            UIManager.Instance.currentStaminalCount += 1;
+            ui.currentStaminalCount += 1;
         }
     }
 
@@ -81,11 +85,11 @@ public class PlayerMovementWithTap : MonoBehaviour
 
     void MovePlayer()
     {
-        transform.Translate(Vector3.forward * UIManager.Instance.currentSpeed * Time.deltaTime);
-        if (UIManager.Instance.currentSpeed > 0.1f)
+        transform.Translate(Vector3.forward * ui.currentSpeed * Time.deltaTime);
+        if (ui.currentSpeed > 0.1f)
         {
             animator.SetBool("Run", true);
-            int tmpSpeed = Mathf.CeilToInt(Mathf.Min(UIManager.Instance.currentSpeed, 3f));
+            int tmpSpeed = Mathf.CeilToInt(Mathf.Min(ui.currentSpeed, 3f));
             animator.SetInteger("Movement Multiplier", tmpSpeed);
           
           
