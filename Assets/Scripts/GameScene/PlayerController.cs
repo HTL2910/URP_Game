@@ -8,19 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float Speed = 1.5f; 
     [SerializeField] private float SideSpeed = 1f;
     [SerializeField] private Animator animator;
-    private Vector3 originPos;
 
-    private void Start()
-    {
-        originPos = transform.position;
-    }
-    private void CheckPosition()
-    {
-        if (gameObject.transform.position.z > 200f)
-        {
-            gameObject.transform.position = originPos;
-        }
-    }
+  
     void Update()
     {
         float vertical = Joystick.Vertical;
@@ -42,6 +31,5 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Run", false);
 
         }
-        CheckPosition();
     }
 }
