@@ -4831,11 +4831,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Joystick: {fileID: 1615872949}
+  currentSpeed: 0
   Speed: 2
   SideSpeed: 2
   animator: {fileID: 1557963175}
   isDead: 0
   losePanel: {fileID: 1609016728}
+  radiusSpeed: {fileID: 1104972527}
 --- !u!114 &918366075
 MonoBehaviour:
   m_ObjectHideFlags: 0

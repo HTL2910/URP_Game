@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private bl_Joystick Joystick;
+    private float currentSpeed;
     [SerializeField] private float Speed = 1.5f; 
     [SerializeField] private float SideSpeed = 1f;
     [SerializeField] private Animator animator;
     public bool isDead=false;
     public GameObject losePanel;
+    public Transform radiusSpeed;
+    private float maxAngle = 80f;
+    private float minAngle = -80f;
     private void Start()
     {
         if (losePanel.activeSelf)
@@ -29,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
             Vector3 movement = forwardMovement + sideMovement;
 
+            currentSpeed = movement.magnitude / Time.deltaTime;
             if (movement.magnitude > 0.1f)
             {
                 transform.Translate(movement, Space.Self);
@@ -41,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-        
+        RotateWithSpeed();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -51,5 +56,10 @@ public class PlayerController : MonoBehaviour
 
             losePanel.SetActive(true);
         }
+    }
+    private void RotateWithSpeed()
+    {
+        float currentAngle = Mathf.Lerp(minAngle, maxAngle, currentSpeed / Speed);//Fix later
+        radiusSpeed.rotation = Quaternion.Euler(0f, 0f, currentAngle);
     }
 }
