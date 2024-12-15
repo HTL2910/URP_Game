@@ -209,4 +209,8 @@ public class UIManager : Singleton<UIManager>
     {
         SceneManager.LoadScene("GameScene");
     }
+    public void GenMapScene()
+    {
+        SceneManager.LoadScene("GenMap");
+    }
 }

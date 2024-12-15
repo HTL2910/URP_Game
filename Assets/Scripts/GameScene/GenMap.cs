@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GenMap : MonoBehaviour
 {
@@ -61,5 +62,13 @@ public class GenMap : MonoBehaviour
             tmp.transform.SetParent(parent);
         }
 
+    }
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void StartScene()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }
