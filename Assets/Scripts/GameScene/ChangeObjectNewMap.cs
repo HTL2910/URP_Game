@@ -13,7 +13,6 @@ public class ChangeObjectNewMap : MonoBehaviour
         float rot = Random.Range(0f, 360f);
         transform.SetPositionAndRotation(transform.position + new Vector3(x, 0f, z),
             Quaternion.Euler(0f, rot, 0f));
-        Debug.Log(x+"+"+z);
-        Debug.Log("rot" + rot);
+       
     }
 }

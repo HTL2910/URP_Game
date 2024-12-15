@@ -18,6 +18,7 @@ public class Cat : MonoBehaviour
     public bool isPicked=false;
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
         sliderPickup= pickUpSlider.GetComponent<Slider>();
         if (pickUpSlider.activeSelf)
