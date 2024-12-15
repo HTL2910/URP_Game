@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider waveSlider;
 
     [SerializeField] Transform playerTransform;
-    //[SerializeField] Transform waveTransform;
+    [SerializeField] Transform waveTransform;
     [SerializeField] Transform endTransform;
     public Transform[] catPositions; 
     public RectTransform[] catIcons;
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         playerSlider.value = Mathf.Clamp(playerTransform.position.z, 0, totalDistance);
-        //waveSlider.value = Mathf.Clamp(waveTransform.position.z, 0, totalDistance);
+        waveSlider.value = Mathf.Clamp(waveTransform.position.z, 0, totalDistance);
     }
    
 }
