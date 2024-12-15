@@ -40,8 +40,13 @@ public class Cat : MonoBehaviour
             }
             animator.SetBool("Run", true);
         }
-    
+        else
+        {
+            animator.SetBool("Run", false);
+
+        }
     }
+ 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("TriggerCat"))

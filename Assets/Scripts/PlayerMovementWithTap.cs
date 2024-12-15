@@ -28,15 +28,8 @@ public class PlayerMovementWithTap : MonoBehaviour
 
         RecoverStamina();
         MovePlayer();
-        CheckPosition();
     }
-    private void CheckPosition()
-    {
-        if (gameObject.transform.position.z > 200f)
-        {
-            gameObject.transform.position = Vector3.zero;
-        }
-    }
+ 
     void HandleTouchInput()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && 
