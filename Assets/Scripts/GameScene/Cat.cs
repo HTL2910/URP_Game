@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Cat : MonoBehaviour
 {
     [SerializeField] GameObject pickUpSlider;
+    [SerializeField] GameObject noteImage;
     [SerializeField] Transform player;
     [SerializeField] Animator animator;        
     public float followSpeed = 2f;    
@@ -26,7 +27,7 @@ public class Cat : MonoBehaviour
     }
     private void Update()
     {
-        if(player!=null && sliderPickup.value == 1f)
+        if(player!=null && sliderPickup.value == 1f && isPicked)
         {
             float distance = Vector3.Distance(transform.position, player.position);
 
@@ -52,7 +53,7 @@ public class Cat : MonoBehaviour
         if (other.CompareTag("TriggerCat"))
         {
             pickUpSlider.SetActive(true);
-            
+            noteImage.SetActive(false);
             StartCoroutine(SmoothSliderChange(sliderPickup, 1f, 0.1f));
         }
         if (sliderPickup.value == 1f)
@@ -67,6 +68,7 @@ public class Cat : MonoBehaviour
         {
            
             pickUpSlider.SetActive(false);
+            noteImage.SetActive(true);
             sliderPickup.value = 0f;
 
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +26,10 @@ public class GameManager : MonoBehaviour
     {
         playerSlider.value = Mathf.Clamp(playerTransform.position.z, 0, totalDistance);
         waveSlider.value = Mathf.Clamp(waveTransform.position.z, 0, totalDistance);
+    }
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("StartScene");
     }
    
 }

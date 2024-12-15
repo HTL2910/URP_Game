@@ -9,6 +9,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float SideSpeed = 1f;
     [SerializeField] private Animator animator;
     public bool isDead=false;
+    public GameObject losePanel;
+    private void Start()
+    {
+        if (losePanel.activeSelf)
+        {
+            losePanel.SetActive(false);
+        }
+    }
     void Update()
     {
         if (!isDead)
@@ -40,6 +48,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Tsunami"))
         {
             isDead = true;
+
+            losePanel.SetActive(true);
         }
     }
 }
